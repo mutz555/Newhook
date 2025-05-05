@@ -4,9 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
 }
 repositories {
-    google()
-    mavenCentral()
-    maven("https://jitpack.io")
+    maven { url = uri("https://jitpack.io") }
 }
 android {
     namespace = "fpbymutz" // Ganti sesuai package kamu
@@ -52,8 +50,8 @@ dependencies {
     compileOnly(files("libs/api-82.jar")) 
 
     // Untuk YukiHookAPI dari JitPack
-    implementation("com.github.highcapable.YukiHookAPI:YukiHookAPI:1.1.10")
-    ksp("com.github.highcapable.YukiHookAPI:ksp-xposed:1.1.10")
+    implementation("com.github.highcapable.YukiHookAPI:master-54c4379e97-1")
+ksp("com.github.highcapable.YukiHookAPI:ksp-xposed:master-54c4379e97-1")
     
     implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
     implementation("androidx.core:core-ktx:1.12.0")
