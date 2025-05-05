@@ -1,19 +1,19 @@
 plugins {
-    autowire(libs.plugins.android.application)
-    autowire(libs.plugins.kotlin.android)
-    autowire(libs.plugins.kotlin.ksp)
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = property.project.app.packageName
-    compileSdk = property.project.android.compileSdk
+    namespace = "fpbymutz" // Ganti sesuai package kamu
+    compileSdk = 34 // Ganti sesuai kebutuhan
 
     defaultConfig {
-        applicationId = property.project.app.packageName
-        minSdk = property.project.android.minSdk
-        targetSdk = property.project.android.targetSdk
-        versionName = property.project.app.versionName
-        versionCode = property.project.app.versionCode
+        applicationId = "fpbymutz" // Ganti sesuai package kamu
+        minSdk = 25 // Ganti sesuai kebutuhan
+        targetSdk = 34 // Ganti sesuai kebutuhan
+        versionName = "1.0.0" // Ganti sesuai kebutuhan
+        versionCode = 1 // Ganti sesuai kebutuhan
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -40,21 +40,19 @@ android {
         viewBinding = true
     }
     lint { checkReleaseBuilds = false }
-    // TODO Please visit https://highcapable.github.io/YukiHookAPI/en/api/special-features/host-inject
-    // TODO 请参考 https://highcapable.github.io/YukiHookAPI/zh-cn/api/special-features/host-inject
     // androidResources.additionalParameters += listOf("--allow-reserved-package-id", "--package-id", "0x64")
 }
 
 dependencies {
-    compileOnly(de.robv.android.xposed.api)
-    implementation(com.highcapable.yukihookapi.api)
-    ksp(com.highcapable.yukihookapi.ksp.xposed)
-    implementation(com.github.duanhong169.drawabletoolbox)
-    implementation(androidx.core.core.ktx)
-    implementation(androidx.appcompat.appcompat)
-    implementation(com.google.android.material.material)
-    implementation(androidx.constraintlayout.constraintlayout)
-    testImplementation(junit.junit)
-    androidTestImplementation(androidx.test.ext.junit)
-    androidTestImplementation(androidx.test.espresso.espresso.core)
+    compileOnly("de.robv.android.xposed:api:82") // Ganti versi sesuai kebutuhan
+    implementation("com.highcapable.yukihookapi:YukiHookAPI:1.1.8") // Ganti versi sesuai kebutuhan
+    ksp("com.highcapable.yukihookapi:ksp-xposed:1.1.8") // Ganti versi sesuai kebutuhan
+    implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
