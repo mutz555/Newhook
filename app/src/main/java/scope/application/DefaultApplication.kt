@@ -1,4 +1,4 @@
-package fpbymutz.application
+package is.fpbymutz.application
 
 import com.highcapable.yukihookapi.hook.xposed.application.ModuleApplication
 
