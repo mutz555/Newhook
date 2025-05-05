@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package is.fpbymutz.utils.factory
+package scope.utils.factory
 
 import android.content.Context
 import android.content.res.Configuration
