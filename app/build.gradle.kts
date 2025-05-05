@@ -3,7 +3,11 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
 }
-
+repositories {
+    google()
+    mavenCentral()
+    maven("https://jitpack.io")
+}
 android {
     namespace = "fpbymutz" // Ganti sesuai package kamu
     compileSdk = 34 // Ganti sesuai kebutuhan
