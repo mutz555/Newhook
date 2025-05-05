@@ -52,7 +52,7 @@ dependencies {
     compileOnly(files("libs/api-82.jar")) 
 
     // Untuk YukiHookAPI dari JitPack
-    implementation("com.github.highcapable.YukiHookAPI:YukiHookAPI:1.1.8")
+    implementation("com.github.highcapable.YukiHookAPI:YukiHookAPI:1.1.7")
 ksp("com.github.highcapable.YukiHookAPI:ksp-xposed:1.1.8")
     implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
     implementation("androidx.core:core-ktx:1.12.0")
