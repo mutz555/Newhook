@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="fpbymutz">
+
+    <application
+        android:name=".application.DefaultApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppDefault"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="xposeddescription"
+            android:value="@string/xposed_desc" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+            <!-- 93 adalah versi minimal LSPosed/Xposed, bisa diganti sesuai kebutuhan -->
+    </application>
+
+</manifest>
