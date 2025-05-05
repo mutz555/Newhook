@@ -20,13 +20,13 @@ repositories:
 plugins:
   com.android.application:
     alias: android-application
-    version: {AGP_VERSION}
+    version: 8.2.2
   org.jetbrains.kotlin.android:
     alias: kotlin-android
-    version: {KOTLIN_VERSION}
+    version: 1.9.23
   com.google.devtools.ksp:
     alias: kotlin-ksp
-    version: {KOTLIN_KSP_VERSION}
+    version: 1.9.23-1.0.20
 
 libraries:
   de.robv.android.xposed:
@@ -36,7 +36,7 @@ libraries:
         rovo89-xposed-api
   com.highcapable.yukihookapi:
     api:
-      version: {YUKIHOOKAPI_VERSION}
+      version: 1.1.8
     ksp-xposed:
       version-ref: <this>::api
   com.github.duanhong169:
