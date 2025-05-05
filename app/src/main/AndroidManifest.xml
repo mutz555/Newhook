@@ -18,8 +18,9 @@
         <meta-data
             android:name="xposedminversion"
             android:value="93" />
+
         <!--
-          93 adalah versi minimal LSPosed/Xposed, bisa diganti sesuai kebutuhan
+            93 adalah versi minimal LSPosed/Xposed, bisa diganti sesuai kebutuhan
         -->
     </application>
 
