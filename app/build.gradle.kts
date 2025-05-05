@@ -48,9 +48,12 @@ android {
 }
 
 dependencies {
-    compileOnly("de.robv.android.xposed:api:82") // Ganti versi sesuai kebutuhan
-    implementation("com.highcapable.yukihookapi:YukiHookAPI:1.1.8") // Ganti versi sesuai kebutuhan
-    ksp("com.highcapable.yukihookapi:ksp-xposed:1.1.8") // Ganti versi sesuai kebutuhan
+    // Untuk Xposed API (manual JAR di libs/)
+    compileOnly(files("libs/api-82.jar")) 
+
+    // Untuk YukiHookAPI dari JitPack
+    implementation("com.github.highcapable.YukiHookAPI:YukiHookAPI:1.1.8")
+    ksp("com.github.highcapable.YukiHookAPI:ksp-xposed:1.1.8")
     implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
