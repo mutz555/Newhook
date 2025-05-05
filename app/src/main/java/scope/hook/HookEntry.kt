@@ -1,4 +1,4 @@
-package is.fpbymutz.hook
+package scope.hook
 
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
 import com.highcapable.yukihookapi.hook.factory.configs
