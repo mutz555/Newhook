@@ -2,10 +2,11 @@ package scope.hook
 
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
 import com.highcapable.yukihookapi.hook.factory.*
-import com.highcapable.yukihookapi.hook.param.result
-import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
-import com.highcapable.yukihookapi.YukiHookAPI
+import com.highcapable.yukihookapi.hook.param.callback.result
+import com.highcapable.yukihookapi.hook.log.logger
 import com.highcapable.yukihookapi.hook.type.java.ClassType
+import com.highcapable.yukihookapi.YukiHookAPI
+import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
 
 @InjectYukiHookWithXposed
 class HookEntry : IYukiHookXposedInit {
@@ -20,7 +21,7 @@ class HookEntry : IYukiHookXposedInit {
                 name = "isFpHardwareDetected"
             }.hookAll {
                 after {
-                    YukiHookAPI.logger.debug("Method isFpHardwareDetected() terpanggil, return akan dipaksa true.")
+                    logger.debug("Method isFpHardwareDetected() terpanggil, return akan dipaksa true.")
                     result = true
                 }
             }
