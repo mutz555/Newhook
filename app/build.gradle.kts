@@ -9,7 +9,7 @@ android {
     compileSdk = 34 // Ganti sesuai kebutuhan
 
     defaultConfig {
-        applicationId = "scope" // Ganti sesuai package kamu
+        applicationId = "scope.hook" // Ganti sesuai package kamu
         minSdk = 25 // Ganti sesuai kebutuhan
         targetSdk = 34 // Ganti sesuai kebutuhan
         versionName = "1.0.0" // Ganti sesuai kebutuhan
