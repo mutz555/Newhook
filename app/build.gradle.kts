@@ -10,23 +10,29 @@ android {
 
     defaultConfig {
         applicationId = "scope.hook" // Ganti sesuai package kamu
-        minSdk = 25 // Ganti sesuai kebutuhan
-        targetSdk = 34 // Ganti sesuai kebutuhan
-        versionName = "1.0.0" // Ganti sesuai kebutuhan
-        versionCode = 1 // Ganti sesuai kebutuhan
+        minSdk = 25
+        targetSdk = 34
+        versionName = "1.0.0"
+        versionCode = 1
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
         freeCompilerArgs = listOf(
@@ -35,12 +41,21 @@ android {
             "-Xno-receiver-assertions"
         )
     }
+
     buildFeatures {
         buildConfig = true
         viewBinding = true
     }
+
     lint { checkReleaseBuilds = false }
-    // androidResources.additionalParameters += listOf("--allow-reserved-package-id", "--package-id", "0x64")
+
+    // Tambahan biar sourceSet-nya bisa ngeload kode hasil generate KSP
+    applicationVariants.configureEach {
+        val variantName = name
+        kotlin.sourceSets.getByName(variantName) {
+            kotlin.srcDir("build/generated/ksp/$variantName/kotlin")
+        }
+    }
 }
 
 dependencies {
