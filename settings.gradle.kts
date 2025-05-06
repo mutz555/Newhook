@@ -1,20 +1,15 @@
 pluginManagement {
     repositories {
         google()
-        mavenCentral()
         gradlePluginPortal()
-        maven("https://jitpack.io")
+        mavenCentral()
     }
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
-        google() // Tambahkan baris ini!
+        google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
     }
 }
-
-rootProject.name = "Newhook"
-include(":app")
