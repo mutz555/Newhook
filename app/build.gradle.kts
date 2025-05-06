@@ -1,19 +1,19 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp")
+    id("com.google.devtools.ksp") version "1.9.22-1.0.18"
 }
 
 android {
-    namespace = "scope" // Ganti sesuai package kamu
-    compileSdk = 34 // Ganti sesuai kebutuhan
+    namespace = "scope"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "scope.hook" // Ganti sesuai package kamu
+        applicationId = "scope.hook"
         minSdk = 25
         targetSdk = 34
-        versionName = "1.0.0"
         versionCode = 1
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,29 +47,38 @@ android {
         viewBinding = true
     }
 
-    lint { checkReleaseBuilds = false }
+    lint {
+        checkReleaseBuilds = false
+    }
 
-    // Tambahan biar sourceSet-nya bisa ngeload kode hasil generate KSP
     sourceSets {
-    named("main") {
-        java.srcDir("build/generated/ksp/main/kotlin")
+        named("main") {
+            java.srcDir("build/generated/ksp/main/kotlin")
+        }
     }
 }
+
+repositories {
+    google()
+    mavenCentral()
 }
+
 dependencies {
+    // YukiHookAPI
     implementation("com.highcapable.yukihookapi:api:1.2.1")
-    implementation("com.highcapable.yukihookapi:core:1.2.1")
     ksp("com.highcapable.yukihookapi:ksp-xposed:1.2.1")
-    
+
+    // Xposed API
     compileOnly(files("libs/api-82.jar"))
 
-    // lainnya tetap
-
-implementation("com.github.duanhong169:drawabletoolbox:1.0.2")
+    // UI & AndroidX
+    implementation("com.github.duanhong169:drawabletoolbox:1.0.2")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
