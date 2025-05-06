@@ -50,11 +50,9 @@ android {
     lint { checkReleaseBuilds = false }
 
     // Tambahan biar sourceSet-nya bisa ngeload kode hasil generate KSP
-    applicationVariants.configureEach {
-        val variantName = name
-        kotlin.sourceSets.getByName(variantName) {
-            kotlin.srcDir("build/generated/ksp/$variantName/kotlin")
-        }
+    sourceSets {
+    named("main") {
+        java.srcDir("build/generated/ksp/main/kotlin")
     }
 }
 
