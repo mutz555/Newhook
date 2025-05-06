@@ -44,11 +44,7 @@ android {
 }
 
 dependencies {
-    // Untuk Xposed API (manual JAR di libs/)
-    compileOnly(files("libs/api-82.jar")) 
-
-    // Untuk YukiHookAPI dari JitPack
-    implementation("com.highcapable.yukihookapi:api:1.2.1")
+implementation("com.highcapable.yukihookapi:api:1.2.1")
     
     implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
     implementation("androidx.core:core-ktx:1.12.0")
