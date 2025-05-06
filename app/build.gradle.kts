@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "is.fpbymutz" // Ganti sesuai package kamu
+    namespace = "scope" // Ganti sesuai package kamu
     compileSdk = 34 // Ganti sesuai kebutuhan
 
     defaultConfig {
-        applicationId = "is.fpbymutz" // Ganti sesuai package kamu
+        applicationId = "scope" // Ganti sesuai package kamu
         minSdk = 25 // Ganti sesuai kebutuhan
         targetSdk = 34 // Ganti sesuai kebutuhan
         versionName = "1.0.0" // Ganti sesuai kebutuhan
