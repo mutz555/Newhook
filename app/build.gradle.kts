@@ -45,7 +45,9 @@ android {
 
 dependencies {
     implementation("com.highcapable.yukihookapi:api:1.2.1")
- implementation("com.github.duanhong169:drawabletoolbox:1.0.2") // Ganti versi sesuai kebutuhan
+    ksp("com.highcapable.yukihookapi:ksp-xposed:1.2.1") // <<< INI WAJIB
+
+    implementation("com.github.duanhong169:drawabletoolbox:1.0.2")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
