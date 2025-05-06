@@ -13,3 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+rootProject.name = "Newhook"
+include(":app")
