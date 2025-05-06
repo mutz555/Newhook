@@ -58,9 +58,13 @@ android {
 }
 dependencies {
     implementation("com.highcapable.yukihookapi:api:1.2.1")
+    implementation("com.highcapable.yukihookapi:core:1.2.1")
     ksp("com.highcapable.yukihookapi:ksp-xposed:1.2.1")
-
+    
     compileOnly(files("libs/api-82.jar"))
+
+    // lainnya tetap
+}
 
     implementation("com.github.duanhong169:drawabletoolbox:1.0.2")
     implementation("androidx.core:core-ktx:1.12.0")
