@@ -55,7 +55,7 @@ android {
         java.srcDir("build/generated/ksp/main/kotlin")
     }
 }
-
+}
 dependencies {
     implementation("com.highcapable.yukihookapi:api:1.2.1")
     ksp("com.highcapable.yukihookapi:ksp-xposed:1.2.1")
